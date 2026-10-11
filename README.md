@@ -1,4 +1,4 @@
-# How an Airport Works
+# Airport
 
 An interactive isometric model of a joint civil–military airfield, drawn entirely in SVG and running live in the browser. You can orbit the camera and follow any aircraft. Watch a whole day of operations: pushbacks, taxiing, take-offs, approaches, landings and stand turnarounds.
 

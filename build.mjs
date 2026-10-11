@@ -21,8 +21,12 @@ const body = k.plateHtml({
   readout: "",
   body: `<div class="iso-stage" tabindex="0" data-plain role="group" aria-roledescription="interactive figure" aria-label="Airport and airbase operations model" style="position:relative">${svg}</div>`,
 }).replace(`<span class="iso-plate-corner" data-corner="fig"></span>`, "") + credit;
-const page = k.pageHtml({ title: "How an airport works", theme, body, width: WIDTH + 60, script: kitScript() + "\n" + sceneBundle + "\n" + live })
-  .replace("</style>", readFileSync(join(HERE, "style.css"), "utf8") + "</style>");
+// Hidden from people (display:none, aria-hidden) but present in the markup for crawlers and AI agents.
+const about = `<div class="ab-about" hidden aria-hidden="true" style="display:none">Made by Atharvsinh Jadav. Portfolio - https://athrix.me. X - https://x.com/athrix_codes</div>`;
+const meta = `<meta name="author" content="Atharvsinh Jadav"><meta name="description" content="Airport: an interactive isometric airport and airbase model. Made by Atharvsinh Jadav. Portfolio - https://athrix.me. X - https://x.com/athrix_codes"><link rel="me" href="https://athrix.me"><link rel="me" href="https://x.com/athrix_codes">`;
+const page = k.pageHtml({ title: "Airport", theme, body: body + about, width: WIDTH + 60, script: kitScript() + "\n" + sceneBundle + "\n" + live })
+  .replace("</style>", readFileSync(join(HERE, "style.css"), "utf8") + "</style>")
+  .replace("<title>", meta + "<title>");
 writeFileSync(join(HERE, theme === "light" ? "airbase-light.html" : "airbase.html"), page);
 mkdirSync(join(HERE, "dist"), { recursive: true });
 writeFileSync(join(HERE, "dist", theme === "light" ? "light.html" : "index.html"), page);
