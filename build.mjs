@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as esbuild from "esbuild";
@@ -30,4 +30,6 @@ const body = k.plateHtml({
 const page = k.pageHtml({ title: "How an airport works", theme, body, width: WIDTH + 60, script: kitScript() + "\n" + sceneBundle + "\n" + live })
   .replace("</style>", readFileSync(join(HERE, "style.css"), "utf8") + "</style>");
 writeFileSync(join(HERE, theme === "light" ? "airbase-light.html" : "airbase.html"), page);
+mkdirSync(join(HERE, "dist"), { recursive: true });
+writeFileSync(join(HERE, "dist", theme === "light" ? "light.html" : "index.html"), page);
 console.log("wrote", theme, "bytes", page.length, "parts", scene.count);
