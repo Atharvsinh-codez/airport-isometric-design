@@ -62,6 +62,9 @@
 .ab-livery{stroke-width:1.15}.ab-lamp-dec{stroke-width:.9}
 
 .iso-page{width:100%;margin:0 auto 24px}
+.ab-credit{margin:28px 0 8px;text-align:center;font:12px/1.4 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-muted)}
+.ab-credit a{color:var(--anatomy-strong);text-decoration:none;border-bottom:1px solid var(--anatomy-lo)}
+.ab-credit a:hover{border-bottom-color:var(--anatomy-strong)}
 .iso-plate{padding:36px 8px 36px}
 .iso-plate-corners{inset:12px 14px}
 .iso-plate .iso-svg{display:block;width:100%;height:auto}
