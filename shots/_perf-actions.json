@@ -1,0 +1,5 @@
+[
+  ["wait", 2500],
+  ["eval", "(() => { const t = []; for (let i = 0; i < 3; i++) { window.__ab.camera.azimuth += 20; window.__ab.redraw(1); t.push(Math.round(window.__ab.cost)); } const c = []; for (let i = 0; i < 3; i++) { window.__ab.camera.azimuth += 20; window.__ab.redraw(0.5); c.push(Math.round(window.__ab.cost)); } return 'full ' + t.join(',') + ' coarse ' + c.join(',') + ' nodes ' + document.querySelectorAll('svg *').length; })()"],
+  ["shot", "shots/_baseline.png"]
+]

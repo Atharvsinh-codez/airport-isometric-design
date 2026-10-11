@@ -1,0 +1,1 @@
+[["wait",800],["eval","(()=>{try{__ab.step(400); const t0=performance.now(); __ab.redraw(1); const c=performance.now()-t0; return JSON.stringify(__ab.ents.filter(e=>e.kind==\"ac\").map(e=>[e.type,e.phase,Math.round(e.x),Math.round(e.y),Math.round(e.z)]))+\" RB=\"+__ab.runwayBusy+\" COST=\"+Math.round(c)}catch(err){return \"ERR \"+err.stack}})()"]]

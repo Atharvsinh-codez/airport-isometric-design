@@ -1,0 +1,6 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/", "destination": "/airbase.html" }]
+}
